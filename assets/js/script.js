@@ -192,3 +192,32 @@ document.querySelectorAll('[data-testimonials-item]').forEach(item => {
 document.querySelector('[data-modal-close-btn]').addEventListener('click', function() {
   document.querySelector('[data-modal-container]').classList.remove('active');
 });
+
+
+
+
+// contact form using EmailJS.
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevents page refresh
+  
+  emailjs.init("G0ASmtDaJpiHP4yCi"); // Your EmailJS API Key
+  
+  const serviceID = "service_uadm15a"; // Your Service ID
+  const templateID = "template_b5lg4n6"; // Your Template ID
+
+  const formData = {
+    from_name: document.querySelector("input[name='name']").value,
+    email: document.querySelector("input[name='email']").value,
+    message: document.querySelector("textarea[name='message']").value
+  };
+  
+  emailjs.send(serviceID, templateID, formData)
+    .then(response => {
+      alert("Message sent successfully!");
+      document.getElementById("contact-form").reset(); // Clears form
+    }, error => {
+      alert("Failed to send message. Try again later.");
+    });
+});
+
