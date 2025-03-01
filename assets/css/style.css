@@ -1925,4 +1925,19 @@ textarea.form-input::-webkit-resizer { display: none; }
   text-decoration: underline;
 }
 
+/* Contact Section */
 
+.get-in-touch {
+  width: 90%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+
+.contact-info-list {
+  display: flex;
+  justify-content: space-between; /* Adjusts space between LinkedIn, Email, and Phone */
+  align-items: center;
+  gap: 60px; /* Controls spacing between items */
+  padding: 10px 40px; /* Controls left and right spacing */
+}
