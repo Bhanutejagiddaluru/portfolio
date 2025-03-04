@@ -555,6 +555,31 @@ main {
   line-height: 1.6;
 }
 
+/* Service Item with Glow Effect */
+/* .service-item {
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  border-radius: 12px;
+  padding: 15px;
+  background: var(--eerie-black-2);
+  box-shadow: 0px 4px 8px rgb(247, 246, 246);
+  cursor: pointer;
+} */
+
+.service-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Soft cyan glow */
+}
+
+/* Adjust Service Icons */
+.service-icon-box img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover .service-icon-box img {
+  transform: scale(1.1);
+}
+
+
 
 /**
  * #testimonials 
@@ -721,6 +746,16 @@ main {
   line-height: 1.6;
 }
 
+/* Glow Effect for Testimonials */
+.testimonials-item {
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.testimonials-item:hover {
+  box-shadow: 0px 0px 15px rgba(173, 216, 230, 0.5); /* Soft cyan glow */
+}
+
 
 /**
  * #clients 
@@ -867,6 +902,19 @@ main {
   border-radius: inherit;
 }
 
+/* Skill Item with Glow Effect */
+.skills-item {
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  padding: 15px;
+  background: var(--eerie-black-2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skills-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.5); /* Soft golden glow */
+}
 
 
 
@@ -1029,6 +1077,30 @@ main {
 
 
 
+/* Project Item with Glow Effect */
+.project-item {
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--eerie-black-2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Soft cyan glow */
+}
+
+/* Adjust Project Image Hover Effect */
+.project-img img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover .project-img img {
+  transform: scale(1.1);
+}
+
+
 
 /*-----------------------------------*\
   #BLOG
@@ -1114,6 +1186,30 @@ main {
   line-height: 1.6;
 }
 
+/* for the background glow effect blog */
+
+/* Blog Post Item with Glow Effect */
+.blog-post-item {
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--eerie-black-2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.blog-post-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Soft cyan glow */
+}
+
+/* Adjust Blog Image Hover Effect */
+.blog-banner-box img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-post-item:hover .blog-banner-box img {
+  transform: scale(1.1);
+}
 
 
 
@@ -1925,6 +2021,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   text-decoration: underline;
 }
 
+
 /* Contact Section */
 
 .get-in-touch {
@@ -1941,3 +2038,205 @@ textarea.form-input::-webkit-resizer { display: none; }
   gap: 60px; /* Controls spacing between items */
   padding: 10px 40px; /* Controls left and right spacing */
 }
+
+
+/* Certification section */
+
+.certifications {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.certifications-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 25px;
+}
+
+/* Grid Layout */
+.certifications-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Certification Card */
+.certification-card {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 200px; /* no of card in row, best is 200px */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  border: 2px solid transparent;
+  position: relative;
+  background-color: var(--card-bg, black); /* Default color */
+}
+
+/* Hover Effect */
+.certification-card:hover {
+  transform: scale(1.05);   /* Enlarges on hover */
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--orange-yellow-crayola);   /* Highlight border */
+}
+
+/* Certification Image */
+.certification-img {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--img-bg, rgb(114, 75, 148)); /* Default light color */
+}
+
+.certification-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.certification-card:hover .certification-img img {
+  transform: scale(1.1);   /* Slight zoom effect on hover */
+}
+
+/* Certification Info */
+.certification-info {
+  background: black;
+  padding: 12px;
+  transition: background 0.3s ease-in-out;
+}
+
+.certification-card:hover .certification-info {
+  background: var(--eerie-black-1);   /* Changes background color on hover */
+}
+
+.certification-info h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.certification-info p {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}
+
+/* Optional Glow Effect */
+.certification-card:hover {
+  box-shadow: 0px 6px 15px rgba(255, 200, 0, 0.5); /* Soft glow effect */
+}
+
+
+
+
+/* for the slider background glow */
+/* Sidebar Glow Effect */
+.sidebar {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 15px;
+  background: var(--eerie-black-2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar:hover {
+  box-shadow: 0px 0px 20px rgba(0, 191, 255, 0.5); /* Soft cyan glow */
+}
+
+/* Contact Icons Glow */
+.icon-box {
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-item:hover .icon-box {
+  box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7); /* Gold glow */
+}
+
+/* Social Icons Hover Effect */
+.social-link {
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 12px rgba(173, 216, 230, 0.7); /* Light blue glow */
+}
+
+
+/* name and title in slider section highlight */
+/* Smooth highlight effect on hover & click */
+/* .name, .title {
+  cursor: pointer;
+  display: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+} */
+
+/* .title {
+  cursor: pointer;
+  display: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+} */
+
+/* above code is name and title under the slider */
+
+
+
+
+
+/* Glow Effect for Get in Touch Section */
+
+.get-in-touch {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+
+/* Glow Effect for Contact Icons */
+.icon-box {
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-info-list li:hover .icon-box {
+  box-shadow: 0px 0px 12px rgba(255, 215, 0, 0.7); /* Gold glow */
+}
+
+/* Glow Effect for Contact Links */
+.contact-link {
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.contact-info-list li:hover .contact-link {
+  text-shadow: 0px 0px 8px rgba(173, 216, 230, 0.8); /* Light blue glow */
+}
+
+/* Glow Effect for Contact Form Button */
+.form-btn {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* .form-btn:hover {
+  box-shadow: 0px 0px 12px rgba(255, 215, 0, 0.7); 
+} */
