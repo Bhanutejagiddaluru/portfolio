@@ -221,3 +221,181 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     });
 });
 
+
+// Certification Section
+document.querySelectorAll('.certifications img').forEach(img => {
+  img.addEventListener('click', function() {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <img src="${this.src}" alt="Certification" />
+          <button class="close-modal">&times;</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+
+    document.querySelector('.close-modal').addEventListener('click', () => {
+      modal.remove();
+    });
+  });
+});
+
+document.querySelectorAll(".certification-card").forEach(card => {
+  let bgColor = card.getAttribute("data-bg");
+  let imgBgColor = card.getAttribute("data-img-bg");
+
+  if (bgColor) {
+    card.style.setProperty("--card-bg", `rgb(${bgColor})`);
+  }
+
+  if (imgBgColor) {
+    card.querySelector(".certification-img").style.setProperty("--img-bg", `rgb(${imgBgColor})`);
+  }
+});
+
+
+
+// for skills to glow
+
+document.querySelectorAll(".skills-item").forEach(item => {
+  let glowColor = "rgba(255, 215, 0, 0.5)"; // Default gold glow
+
+  // Set different glow for skill categories
+  if (item.innerText.includes("AI")) glowColor = "rgba(0, 255, 255, 0.5)"; // Cyan for AI
+  if (item.innerText.includes("Programming")) glowColor = "rgba(255, 165, 0, 0.5)"; // Orange for Programming
+  if (item.innerText.includes("Software")) glowColor = "rgba(173, 216, 230, 0.5)"; // Light Blue for Software
+  if (item.innerText.includes("Hardware")) glowColor = "rgba(144, 238, 144, 0.5)"; // Light Green for Hardware
+
+  item.addEventListener("mouseover", () => {
+    item.style.boxShadow = `0px 0px 15px ${glowColor}`;
+  });
+
+  item.addEventListener("mouseout", () => {
+    item.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+  });
+});
+
+
+
+//  services section background effect
+
+document.querySelectorAll(".service-item").forEach(item => {
+  let glowColor = "rgba(0, 255, 255, 0.5)"; // Default cyan glow
+
+  // Set different glow colors for each service
+  if (item.innerText.includes("Robotics")) glowColor = "rgba(255, 215, 0, 0.5)"; // Orange for Robotics
+  if (item.innerText.includes("IoT")) glowColor = "rgba(255, 215, 0, 0.5)"; // Green for IoT
+  if (item.innerText.includes("AI")) glowColor = "rgba(255, 215, 0, 0.5)"; // Indigo for AI
+  if (item.innerText.includes("PCB")) glowColor = "rgba(255, 215, 0, 0.5)"; // Gold for PCB
+
+  item.addEventListener("mouseover", () => {
+    item.style.boxShadow = `0px 0px 15px ${glowColor}`;
+  });
+
+  item.addEventListener("mouseout", () => {
+    item.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+  });
+});
+
+
+// for projects background glow
+
+document.querySelectorAll(".project-item").forEach(item => {
+  let glowColor = "rgba(0, 255, 255, 0.5)"; // Default cyan glow
+
+  // Set different glow colors for each project category
+  if (item.dataset.category === "ai & robotics") glowColor = "rgba(0, 255, 255, 0.5)"; // Orange for AI & Robotics
+  if (item.dataset.category === "embedded systems") glowColor = "rgba(0, 255, 127, 0.5)"; // Green for Embedded Systems
+  if (item.dataset.category === "applications") glowColor = "rgba(255, 215, 0, 0.5)"; // Gold for Applications
+
+  item.addEventListener("mouseover", () => {
+    item.style.boxShadow = `0px 0px 15px ${glowColor}`;
+  });
+
+  item.addEventListener("mouseout", () => {
+    item.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+  });
+});
+
+
+// for the blog section background glow effect
+
+document.querySelectorAll(".blog-post-item").forEach(item => {
+  let category = item.querySelector(".blog-category")?.innerText || "";
+  let glowColor = "rgba(0, 255, 255, 0.5)"; // Default cyan glow
+
+  // Set different glow colors for each blog category
+  if (category.includes("Robotics")) glowColor = "rgba(185, 134, 207, 0.8)"; // Orange for Robotics
+  if (category.includes("3D Printing")) glowColor = "rgba(0, 255, 127, 0.5)"; // Green for 3D Printing
+  if (category.includes("Electronics")) glowColor = "rgba(255, 215, 0, 0.5)"; // Gold for Electronics
+  if (category.includes("PCB Design")) glowColor = "rgba(225, 79, 79, 0.58)"; // Indigo for PCB Design
+  if (category.includes("AI")) glowColor = "rgba(0, 191, 255, 0.5)"; // Sky Blue for AI
+  if (category.includes("Leadership")) glowColor = "rgba(119, 193, 191, 0.5)"; // Dark Orange for Leadership
+
+  item.addEventListener("mouseover", () => {
+    item.style.boxShadow = `0px 0px 15px ${glowColor}`;
+  });
+
+  item.addEventListener("mouseout", () => {
+    item.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+  });
+});
+
+// // name and title
+// // Function to highlight element
+// function addHighlightEffect(element) {
+//   element.style.transition = "background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out";
+//   element.style.backgroundColor = "rgba(99, 195, 105, 0.75)"; // Soft gold highlight
+//   element.style.boxShadow = "0px 0px 12px rgba(51, 163, 70, 0.81)";
+// }
+
+// Function to remove highlight effect
+// function removeHighlightEffect(element) {
+//   setTimeout(() => {
+//     element.style.backgroundColor = "transparent";
+//     element.style.boxShadow = "none";
+//   }, 500); // Reset after 0.5s
+// }
+
+// // Apply effect to name and title on hover and click
+// document.querySelectorAll(".name, .title").forEach(element => {
+//   element.addEventListener("mouseover", function () {
+//     addHighlightEffect(this);
+//   });
+
+//   element.addEventListener("mouseout", function () {
+//     removeHighlightEffect(this);
+//   });
+
+//   element.addEventListener("click", function () {
+//     addHighlightEffect(this);
+//     removeHighlightEffect(this);
+//   });
+// });
+
+// // only the title to glow in the slider section
+// function removeHighlightEffect(element) {
+//   setTimeout(() => {
+//     element.style.backgroundColor = "transparent";
+//     element.style.boxShadow = "none";
+//   }, 100); // Reset after 0.5s
+// }
+
+// // Apply effect to name and title on hover and click
+// document.querySelectorAll(".title").forEach(element => {
+//   element.addEventListener("mouseover", function () {
+//     addHighlightEffect(this);
+//   });
+
+//   element.addEventListener("mouseout", function () {
+//     removeHighlightEffect(this);
+//   });
+
+//   element.addEventListener("click", function () {
+//     addHighlightEffect(this);
+//     removeHighlightEffect(this);
+//   });
+// });
+
+
